@@ -1,20 +1,9 @@
-# RecGAN
+# HINGAN
 
-A GAN-based recommendation approach. It is not completed yet.
-## G模型
-与CFGAN一样，每一轮训练都从训练集中按比例随机抽取样本，让其为负样本。
-再与G的输出进行点乘。具体细节可参考CFGAN.
+A GAN-based recommendation approach. 
+This is the code accompanying the ICML 2019 paper "Generative Adversarial Network Based Service Recommendation in Heterogeneous Information Networks" Paper link: [https://ieeexplore.ieee.org/abstract/document/8818434]
 
-## D模型
-将用户的category,description,tag进行embedding, sum-pooling
-(具体可参考阿里的DIN)，与attention层之后的向量进行拼接，再传进全连接层
-（注意：embedding层的参数只在训练D模型的时候更新）。
-D模型中加了正则化，因为这里的attention实际生成的是ms的向量，而G模型要学习的就是这个向量，
-加了这个可以让attention层的输出跟训练集中的
-不要相差太远（如果不加的话效果会差一点，但不会特别差）。
-
-
-## 实验结果
+## Experimental results
 
 ### top-3
  
@@ -55,14 +44,13 @@ D模型中加了正则化，因为这里的attention实际生成的是ms的向�
 |CFGAN|0.4621 |0.0675 |0.3602 |0.3551
 |**Ours**|0.5635 |0.0799|0.5060 |0.4820
 
-### 八条路径的关键程度
+### The importance of 8 metal paths
 
-D模型学到的权重值，m-s-m-s比较重要，其实如果把每条路径的
-weight都固定为0.125结果会稍微差一点，但不是很关键
+m-s-m-s is the most important
 
 ![avatar](./results/figs/weights.png)
 
-### 参数的影响
+### impact on hyperparameters
 
 &alpha; 是G模型的正则化参数，同CFGAN
 
