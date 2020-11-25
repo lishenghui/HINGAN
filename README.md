@@ -1,7 +1,7 @@
 # HINGAN
 
 A GAN-based recommendation approach. 
-This is the code accompanying the ICML 2019 paper "Generative Adversarial Network Based Service Recommendation in Heterogeneous Information Networks" Paper link: [https://ieeexplore.ieee.org/abstract/document/8818434]
+This is the code accompanying the ICWS 2019 paper "Generative Adversarial Network Based Service Recommendation in Heterogeneous Information Networks" Paper link: [https://ieeexplore.ieee.org/abstract/document/8818434]
 
 ## Experimental results
 
